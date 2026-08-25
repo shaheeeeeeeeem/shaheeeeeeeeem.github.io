@@ -6,7 +6,7 @@ export const AIR_QUALITY_APP: string =
 export const HIV_APP: string =
   'https://molecular-property-prediction-gnngit-kctmdvzbrbrhddr7bj4hr5.streamlit.app/'
 
-export const NAME = 'Shaheem'
+export const NAME = 'Mohamed Shaheem'
 export const AFFILIATION = 'Mechanical & Aerospace Engineering @ IIT Hyderabad, 2024\u20132028'
 
 export const ABOUT =
@@ -23,7 +23,7 @@ export const EXPERIENCE: Role[] = [
   {
     org: 'EigenAxis.ai',
     title: 'Machine Learning Intern',
-    period: 'Present',
+    period: 'Aug 2026 — Present',
     detail:
       'RAG pipelines; built a custom encoder embedding model from scratch in PyTorch with multi-head attention.',
   },
@@ -47,14 +47,14 @@ export const PROJECTS: Project[] = [
   {
     name: 'Air Quality Forecasting',
     language: 'Python / LightGBM',
-    href: AIR_QUALITY_APP,
+    href: '', // AIR_QUALITY_APP
     detail:
       'LightGBM with walk-forward CV (365-day min train window, 30-day horizon, 39 folds per city) across five Indian cities on CPCB data. Holdout MAE 5.25\u201323.44, validated against OpenAQ. Deployed on Streamlit.',
   },
   {
     name: 'HIV Inhibition Prediction',
     language: 'Python / PyTorch Geometric',
-    href: HIV_APP,
+    href: '', // HIV_APP
     detail:
       "GIN and GAT on OGB's ogbg-molhiv (test ROC-AUC 0.7598 / 0.7403), extended to the 128-task ogbg-molpcba (mean AP 0.2204 with a virtual node). Deployed on Streamlit.",
   },
