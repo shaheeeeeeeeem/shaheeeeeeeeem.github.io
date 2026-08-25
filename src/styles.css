@@ -1,0 +1,243 @@
+:root {
+  --bg: #fbfaf7;
+  --ink: #1a1b18;
+  --muted: #6e6c64;
+  --rule: #e4e0d7;
+  --accent: #1e5a4e;
+
+  --sans: 'IBM Plex Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --gutter: 9rem;
+  --gap: 2.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #12130f;
+    --ink: #e9e7e0;
+    --muted: #9a978d;
+    --rule: #2a2b26;
+    --accent: #7fc0ac;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  font-synthesis-weight: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (min-width: 40rem) {
+  body {
+    font-size: 1.0625rem;
+  }
+}
+
+p {
+  margin: 0;
+  max-width: 40rem;
+  text-wrap: pretty;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+  transition: text-decoration-thickness 120ms ease;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 1px;
+}
+
+.wrap {
+  max-width: 54rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.skip {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+}
+
+.skip:focus {
+  left: 1.5rem;
+  top: 1rem;
+  z-index: 1;
+  background: var(--bg);
+  padding: 0.5rem 0.75rem;
+}
+
+.masthead {
+  padding: 4rem 0 2.5rem;
+}
+
+.masthead h1 {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+}
+
+.masthead .affiliation {
+  margin-top: 0.5rem;
+  color: var(--muted);
+}
+
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.25rem;
+  margin-top: 1.25rem;
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+}
+
+.contact .pending {
+  color: var(--muted);
+}
+
+.section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--rule);
+}
+
+@media (min-width: 56rem) {
+  .section {
+    grid-template-columns: var(--gutter) 1fr;
+    gap: 0 var(--gap);
+  }
+}
+
+.section h2 {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.entries > li + li {
+  margin-top: 1.75rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--rule);
+}
+
+.entry-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0 1rem;
+}
+
+.entry-head h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+
+.meta {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.entry-sub {
+  margin-top: 0.125rem;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.entry p {
+  margin-top: 0.625rem;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  color: var(--ink);
+}
+
+.skills li::after {
+  content: '\00b7';
+  color: var(--muted);
+  padding: 0 0.5rem;
+}
+
+.skills li:last-child::after {
+  content: '';
+  padding: 0;
+}
+
+.footer {
+  padding: 2.5rem 0 4rem;
+  border-top: 1px solid var(--rule);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.25rem;
+  margin-bottom: 0.75rem;
+}
